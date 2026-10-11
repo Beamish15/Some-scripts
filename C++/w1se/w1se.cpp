@@ -26,7 +26,7 @@ int main() {
         key_4bytes[i] = c[i] ^ known_prefix[i];
     }
 
-    std::cout << "[*] Iniciando busqueda..." << std::endl; // This is for testing
+    std::cout << "[*] Running..." << std::endl; // This is for testing
 
     for (int last_byte = 0; last_byte < 256; last_byte++) {
         std::vector<unsigned char> full_key = key_4bytes;
@@ -38,7 +38,7 @@ int main() {
         }
 
         if (p.rfind("THM{", 0) == 0 && p.back() == '}') {
-            std::cout << "[+] Clave encontrada: ";
+            std::cout << "[+] Key found: ";
             for (auto b : full_key) std::cout << b;
             std::cout << "\n[+] Flag: " << p << std::endl;
             break;
